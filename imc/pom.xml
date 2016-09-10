@@ -16,6 +16,31 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>imc</finalName>
-  </build>
+		<!--Define o nome do pacote final que será gerado.-->
+		<finalName>atividade01</finalName>
+
+		<plugins>
+
+			<!--Para o Eclipse não reclamar que o "web.xml" está faltado.-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<!--Para usar o Tomcat durante o desenvolvimento.-->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>9090</port>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>

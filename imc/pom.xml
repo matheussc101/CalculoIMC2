@@ -7,40 +7,44 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>imc Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <!-- Propriedades dos plugins do Maven. -->
+  <properties>
+    <!-- Utiliza e produz programas Java compatíveis com Java 1.8. -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <!-- Para mostrar os caracteres especiais corretamente. -->
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <!-- Para o Eclipse não reclamar que o "web.xml" está faltado. -->
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </properties>
+  
   <dependencies>
+    <!-- Para Servlet -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
+  
   <build>
 		<!--Define o nome do pacote final que serÃ¡ gerado.-->
 		<finalName>atividade01</finalName>
 
 		<plugins>
 
-			<!--Para o Eclipse nÃ£o reclamar que o "web.xml" estÃ¡ faltado.-->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
+                    <!-- Para usar o Tomcat durante o desenvolvimento. -->
+                    <plugin>
+                      <groupId>org.apache.tomcat.maven</groupId>
+                      <artifactId>tomcat7-maven-plugin</artifactId>
+                      <version>2.2</version>
+                      <configuration>
+                        <port>9090</port>
+                      </configuration>
+                    </plugin>
 
-			<!--Para usar o Tomcat durante o desenvolvimento.-->
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<port>9090</port>
-				</configuration>
-			</plugin>
-
-		</plugins>
+                </plugins>
 	</build>
 </project>

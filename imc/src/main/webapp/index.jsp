@@ -42,7 +42,11 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="altura">Altura</label>  
            <div class="col-md-4">
+<<<<<<< HEAD
            <input id="altura" name="altura" type="number" placeholder="Digite sua altura (m)" class="form-control input-md" required autocomplete="off">
+=======
+           <input id="altura" name="altura" type="text" placeholder="Digite sua altura (m)" class="form-control input-md" required autocomplete="off">
+>>>>>>> 880e1281a77bbbcd8203a5048961196b5423680d
            <span class="help-block">Ex.: 1.76</span>  
            </div>
          </div>
@@ -51,7 +55,11 @@
          <div class="form-group">
            <label class="col-md-4 control-label" for="peso">Peso</label>  
            <div class="col-md-4">
+<<<<<<< HEAD
            <input id="peso" name="peso" type="number" placeholder="digite seu peso (Kg)" class="form-control input-md" required autocomplete="off">
+=======
+           <input id="peso" name="peso" type="text" placeholder="digite seu peso (Kg)" class="form-control input-md" required autocomplete="off">
+>>>>>>> 880e1281a77bbbcd8203a5048961196b5423680d
            <span class="help-block">Ex.: 89.00</span>  
            </div>
          </div>
@@ -81,6 +89,7 @@
 	              String mensagem = "";
 	              String alert = "alert alert-info";
 	              
+<<<<<<< HEAD
 	              
 	              if (sexo == "1") {
 	            	  
@@ -98,10 +107,29 @@
 	            		  alert = "alert alert-danger";
 	            	  } else if (imc > 32.3) {
 	            		  mensagem = "IMC :"+imc+". Obeso.";
+=======
+	              if (sexo == "1") {
+	            	  
+	            	  if(imc < 19.1) {
+	            		  mensagem = "Abaixo do peso.";
+	            		  alert = "alert alert-danger";
+	            		  
+	            	  } else if (imc <= 25.8) {
+	            		  mensagem = "Peso normal.";
+	            		  alert = "alert alert-success";
+	            	  } else if (imc <= 27.3) {
+	            		  mensagem = "Marginalmente acima do peso.";
+	            	  } else if (imc <= 32.3) {
+	            		  mensagem = "Acima do peso ideal.";
+	            		  alert = "alert alert-danger";
+	            	  } else if (imc > 32.3) {
+	            		  mensagem = "Obeso.";
+>>>>>>> 880e1281a77bbbcd8203a5048961196b5423680d
 	            		  alert = "alert alert-danger";
 	            	  } 
 	            	
 	              } else {
+<<<<<<< HEAD
 	            	  if(imc < 20.7) {
 	            		  mensagem = "IMC :"+imc+". Abaixo do peso.";
 	            		  alert = "alert alert-danger";            		  
@@ -119,6 +147,25 @@
 	                  }
 	              }
 	            	  
+=======
+	            	  
+	              }
+	            	  if(imc < 20.7) {
+	            		  mensagem = "Abaixo do peso.";
+	            		  alert = "alert alert-danger";            		  
+	            	  } else if (imc <= 26.4) {
+	            		  mensagem = "Peso normal.";
+	            		  alert = "alert alert-success";
+	            	  } else if (imc <= 27.8) {
+	            		  mensagem = "Marginalmente acima do peso.";
+	            	  } else if (imc <= 31.1) {
+	            		  mensagem = "Acima do peso ideal.";
+	            		  alert = "alert alert-danger";
+	            	  } else if (imc > 31.1) {
+	            		  mensagem = "Obeso.";
+	            		  alert = "alert alert-danger";
+	              }
+>>>>>>> 880e1281a77bbbcd8203a5048961196b5423680d
 	              
 	              String codHtml = "<div class='"+alert+"'>"+mensagem+"</div>";
 	              
